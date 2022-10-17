@@ -53,8 +53,9 @@ function assemblePassword(length, lowerCase, upperCase, numbers, special) {
     characters = characters.concat(spec)
    }  
    console.log(characters)
-    // for (let i = 0; i < length; i++) {
-    // next = lower[Math.floor(Math.random() * lower.length)];
-    // seccurePassword.push(next);
-    // }
+    for (let i = 0; i < length; i++) {
+    next = characters[Math.floor(Math.random() * characters.length)];
+    seccurePassword.push(next);
+    }
+    console.log(seccurePassword)
 }
