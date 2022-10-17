@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword ();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -12,11 +12,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
-
+var seccurePassword = []
 var lower = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 var upper = 'QWERTYUIOPASDFGHJKLZXCVBNM'.split('');
 var numb = '1234567890'.split('');
 var spec = '!@#$%^&*()-=_+'.split('');
+var next = ''
 function generatePassword() {
     var length = prompt('How many digits would you like your password to be?');
     console.log(length)
@@ -26,16 +27,20 @@ function generatePassword() {
     } else {
         var lowerCase = confirm('Would you like your password to include lower case letters?');
         var upperCase = confirm('Would you like your password to contain upper case letters?');
-        var numbers = confirm('Would you like your password to contain numbres?')
-        var special = confirm('Would you like your password to contian special didgets?')
+        var numbers = confirm('Would you like your password to contain numbres?');
+        var special = confirm('Would you like your password to contian special didgets?');
     }
     if (!lowerCase && !upperCase && !numbers && !special) {
-        alert("You must select yes on at least one of the previous questions")
-        generatePassword()
+        alert("You must select yes on at least one of the previous questions");
+        generatePassword();
     } else {
-        assemblePassword(length, lowerCase, upperCase, numbers, special)        
+        assemblePassword(length, lowerCase, upperCase, numbers, special) ;       
     }
 }
 
 function assemblePassword(length, lowerCase, upperCase, numbers, special) {
+    for (let i = 0; i < length; i++) {
+        next = lower[Math.floor(Math.random() * lower.length)];
+        seccurePassword.push(next);
+    }
 }
