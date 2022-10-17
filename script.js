@@ -18,6 +18,7 @@ var upper = 'QWERTYUIOPASDFGHJKLZXCVBNM'.split('');
 var numb = '1234567890'.split('');
 var spec = '!@#$%^&*()-=_+'.split('');
 var next = ''
+var characters = []
 function generatePassword() {
     var length = prompt('How many digits would you like your password to be?');
     console.log(length)
@@ -39,8 +40,21 @@ function generatePassword() {
 }
 
 function assemblePassword(length, lowerCase, upperCase, numbers, special) {
-    for (let i = 0; i < length; i++) {
-        next = lower[Math.floor(Math.random() * lower.length)];
-        seccurePassword.push(next);
-    }
+   if (lowerCase) {
+    characters = characters.concat(lower)
+   }
+   if (upperCase) {
+    characters = characters.concat(upper)
+   }
+   if (numbers) {
+    characters = characters.concat(numb)
+   }
+   if (special) {
+    characters = characters.concat(spec)
+   }  
+   console.log(characters)
+    // for (let i = 0; i < length; i++) {
+    // next = lower[Math.floor(Math.random() * lower.length)];
+    // seccurePassword.push(next);
+    // }
 }
