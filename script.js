@@ -9,7 +9,7 @@ var passwordArray = []
 var lower = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 var upper = 'QWERTYUIOPASDFGHJKLZXCVBNM'.split('');
 var numb = '1234567890'.split('');
-var spec = '!@#$%^&*()-=_+'.split('');
+var spec = '!#$%&)"(*+,-./:;<=>?@][{|}~'.split('');
 var next = ''
 var characters = []
 
