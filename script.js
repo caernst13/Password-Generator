@@ -11,19 +11,18 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", characters);
+generateBtn.addEventListener("click", generatePassword);
 
-
-var length = 0;
-var lowerCase = false;
-var upperCase = flase;
-var numbers = false;
-var special = false;
-function characters(){
+var lower = 'qwertyuiopasdfghjklzxcvbnm'.split('');
+var upper = 'QWERTYUIOPASDFGHJKLZXCVBNM'.split('');
+var numb = '1234567890'.split('');
+var spec = '!@#$%^&*()-=_+'.split('');
+function generatePassword() {
     var length = prompt('How many digits would you like your password to be?');
+    console.log(length)
     if (length < 8 || length > 128) {
         alert("You did not select a valid length, please try again.");
-        characters();
+        generatePassword();
     } else {
         var lowerCase = confirm('Would you like your password to include lower case letters?');
         var upperCase = confirm('Would you like your password to contain upper case letters?');
@@ -32,8 +31,11 @@ function characters(){
     }
     if (!lowerCase && !upperCase && !numbers && !special) {
         alert("You must select yes on at least one of the previous questions")
-        characters()
+        generatePassword()
     } else {
-        alert('Here is your password')
+        assemblePassword(length, lowerCase, upperCase, numbers, special)        
     }
+}
+
+function assemblePassword(length, lowerCase, upperCase, numbers, special) {
 }
