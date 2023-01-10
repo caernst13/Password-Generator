@@ -16,16 +16,19 @@ var characters = []
 // Has the user select what kind of characters to use and how long they want the password to be
 function characterSelect() {
     var length = prompt('How many digits would you like your password to be?');
-
+    var lowerCase = false;
+    var upperCase = false;
+    var numbers = false;
+    var special = false;
     // Checks to make sure length falls into accepted range
     if (length < 8 || length > 128) {
-        alert("You did not select a valid length, please try again.");
+        alert("You did not select a valid length, please select a number between 8 and 128.");
         characterSelect();
     } else {
-        var lowerCase = confirm('Would you like your password to include lower case letters?');
-        var upperCase = confirm('Would you like your password to contain upper case letters?');
-        var numbers = confirm('Would you like your password to contain numbres?');
-        var special = confirm('Would you like your password to contian special didgets?');
+        lowerCase = confirm('Would you like your password to include lower case letters?');
+        upperCase = confirm('Would you like your password to contain upper case letters?');
+        numbers = confirm('Would you like your password to contain numbres?');
+        special = confirm('Would you like your password to contian special didgets?');
     }
 
     // Checks that at least one kind of character was selected 
